@@ -41,7 +41,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="grails-2.0.4" level="application" />
     <orderEntry type="module-library" exported="">
-      <library name="Grails User Library (cassandra-console-grailsPlugins)">
+      <library name="Grails User Library (cassandra-tests-orm-astyanax-grailsPlugins)">
         <CLASSES>
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.stephenc.eaio-uuid/uuid/jars/uuid-3.2.0.jar!/" />

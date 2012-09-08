@@ -4,15 +4,15 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="Grails" name="Grails" removed="false">
-          <file>file://$MODULE_DIR$/web-app/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/../cassandra-orm/web-app/WEB-INF/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/web-app" relative="/" />
-          <root url="file://$MODULE_DIR$/grails-app/views" relative="/" />
+          <root url="file://$MODULE_DIR$/../cassandra-orm/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/../cassandra-orm/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -28,27 +28,27 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/cassandra" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+    <content url="file://$MODULE_DIR$/../cassandra-orm">
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-orm/test/integration" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../cassandra-orm/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../cassandra-orm/target/test-classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="grails-2.0.4" level="application" />
-    <orderEntry type="module-library" exported="">
-      <library name="Grails User Library (cassandra-console)">
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.0.4" level="application" />
+    <orderEntry type="module-library">
+      <library name="Grails User Library (cassandraOrm-inplacePlugin)">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/lib" />
+          <root url="file://$MODULE_DIR$/../cassandra-orm/lib" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.stephenc.eaio-uuid/uuid/jars/uuid-3.2.0.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.code.findbugs/jsr305/jars/jsr305-1.3.9.jar!/" />
@@ -84,12 +84,10 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../cassandra-orm/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="cassandra-console-grailsPlugins" />
-    <orderEntry type="module" module-name="cassandraOrm-inplacePlugin" exported="" />
-    <orderEntry type="module" module-name="cassandraAstyanax-inplacePlugin" exported="" />
+    <orderEntry type="module" module-name="cassandra-tests-orm-astyanax-grailsPlugins" />
   </component>
 </module>
 

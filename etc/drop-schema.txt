@@ -1,3 +1,4 @@
 drop keyspace docs_gettingstarted;
 drop keyspace docs_secondaryindexes;
 drop keyspace docs_explicitindexes;
+drop keyspace docs_counters;
