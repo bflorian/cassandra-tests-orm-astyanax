@@ -1,10 +1,12 @@
 class BootStrap {
 
     def init = { servletContext ->
-		log.info "init"
-		runCqlScript("etc/drop-schema.txt")
-		runCqlScript("etc/create-schema.txt")
-		log.info "init completed"
+		if (System.getProperty('dsePath')) {
+			log.info "init"
+			runCqlScript("etc/drop-schema.txt")
+			runCqlScript("etc/create-schema.txt")
+			log.info "init completed"
+		}
     }
 
     def destroy = {
