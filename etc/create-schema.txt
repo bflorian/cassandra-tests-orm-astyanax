@@ -1,0 +1,29 @@
+create keyspace docs_gettingstarted;
+use docs_gettingstarted;
+create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family Post with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Post_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Post_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+
+
+create keyspace docs_secondaryindexes;
+use docs_secondaryindexes;
+create column family Person
+    with comparator=UTF8Type
+    and default_validation_class=UTF8Type
+    and column_metadata=[
+        {column_name: gender, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: country, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: state, validation_class: UTF8Type, index_type: KEYS}
+    ];
+create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+
+
+create keyspace docs_explicitindexes;
+use docs_explicitindexes;
+create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cassandra-console.iml" filepath="$PROJECT_DIR$/cassandra-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandra-console-grailsPlugins.iml" filepath="$PROJECT_DIR$/cassandra-console-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandraAstyanax-inplacePlugin.iml" filepath="$PROJECT_DIR$/cassandraAstyanax-inplacePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandraOrm-inplacePlugin.iml" filepath="$PROJECT_DIR$/cassandraOrm-inplacePlugin.iml" />
+    </modules>
+  </component>
+</project>
+
