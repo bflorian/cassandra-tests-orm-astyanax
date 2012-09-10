@@ -19,6 +19,6 @@ class Person
 			explicitIndexes: ["emailAddress", "country"],
 			counters: [[groupBy: "country"]],
 
-			keySpace: "docs_gettingstarted"
+			cluster: "gettingstarted"
 	]
 }

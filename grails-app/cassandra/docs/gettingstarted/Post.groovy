@@ -20,6 +20,6 @@ class Post
 					[findBy:  ['user'], groupBy:['occurTime']]
 			],
 
-			keySpace: "docs_gettingstarted"
+			cluster: "gettingstarted"
 	]
 }

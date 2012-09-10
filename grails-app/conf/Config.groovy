@@ -100,8 +100,12 @@ astyanax {
 	clusters {
 		standard {
 			seeds = ["localhost:9160"]
-			defaultKeyspace = "orm_doc"
+		}
+		gettingstarted {
+			seeds = ["localhost:9160"]
+			defaultKeyspace = "docs_gettingstarted"
 		}
 	}
 	defaultCluster = 'standard'
+	defaultKeyspace = "orm_doc"
 }

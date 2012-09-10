@@ -32,4 +32,10 @@ create column family Visit with comparator=UTF8Type and default_validation_class
 create column family Visit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Visit_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
 
+create keyspace docs_expandos;
+use docs_expandos;
+create column family Event with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Event_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+
+
 
