@@ -9,7 +9,7 @@ class LogEntry
 	Date occurTime
 	String messageText
 
-	def cassandraMapping = [
+	static cassandraMapping = [
 	        primaryKey: "uuid",
 			timeToLive: 90,
 

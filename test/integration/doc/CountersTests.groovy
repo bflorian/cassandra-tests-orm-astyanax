@@ -119,6 +119,20 @@ class CountersTests extends ExamplesBase
 		assertEquals 63, result[0].size()
 	}
 
+	void testStartOnly()
+	{
+		def result = processFile(document, imports, "Visit.getCountsGroupByOccurTime(fill: true, grain: Calendar.DAY_OF_MONTH, start")
+		assertEquals 1, result.size()
+		assertEquals 16, result[0].size()
+	}
+
+	void testStartFinish()
+	{
+		def result = processFile(document, imports, "Visit.getCountsGroupByOccurTime(grain: Calendar.DAY_OF_MONTH, fill: true,")
+		assertEquals 1, result.size()
+		assertEquals 6, result[0].size()
+	}
+
 	static df = new SimpleDateFormat("yyyy-MM-dd")
 	static tf = new SimpleDateFormat("yyyy-MM-dd HH:mm")
 }

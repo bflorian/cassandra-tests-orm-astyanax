@@ -1,3 +1,16 @@
+create keyspace example;
+use example;
+create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family Post with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Post_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Post_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family Comment with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Comment_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Comment_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+
+
 create keyspace docs_gettingstarted;
 use docs_gettingstarted;
 create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
