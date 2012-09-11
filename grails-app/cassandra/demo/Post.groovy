@@ -1,4 +1,4 @@
-package example
+package demo
 
 /**
  * @author: Bob Florian
@@ -20,9 +20,8 @@ class Post
 	static cassandraMapping = [
 			primaryKey: 'uuid',
 			counters: [
-					[groupBy: ['occurTime']],
-					[findBy:  ['person'], groupBy:['occurTime']]
+					[groupBy: ['occurTime']]
 			],
-			keySpace: "example"
+			keySpace: "demo"
 	]
 }

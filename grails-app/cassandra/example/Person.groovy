@@ -19,6 +19,7 @@ class Person
 	Date birthDate
 
 	List posts
+	Set friends
 	static hasMany = [posts: Post, friends: Person]
 
 	static cassandraMapping = [
@@ -33,4 +34,9 @@ class Person
 			] ,
 			keySpace: "example"
 	]
+
+	Boolean isFriendOf(Person person)
+	{
+		friendsCount(start: person.id, finish: person.id) > 0
+	}
 }

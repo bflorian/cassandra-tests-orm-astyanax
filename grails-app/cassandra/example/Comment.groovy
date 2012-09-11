@@ -12,12 +12,15 @@ class Comment
 	Post post
 	static belongsTo = [post: Post]
 
+	Set likedBy
+	static hasMany = [likedBy: Person]
+
 	static cassandraMapping = [
 			primaryKey: 'uuid',
 			counters: [
-					[groupBy: ['post']],
-					[findBy:  ['person'], groupBy:['occurTime']]
+					[findBy: ['post'], groupBy:['occurTime']],
+					[findBy: ['person'], groupBy:['occurTime']]
 			],
-			keySpace: "example"
+			keySpace: "demo"
 	]
 }

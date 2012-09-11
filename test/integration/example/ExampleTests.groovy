@@ -11,25 +11,39 @@ class ExampleTests
 	@Test
 	void testSetup()
 	{
-		for (p in 1..10) {
+		for (p in 1..3) {
 			def person = new Person(username: "user$p").save()
-			person.addToPosts(new Post(title: "User $p's Post 1", text: "Text of post 1", occurTime: new Date()))
-			person.addToPosts(new Post(title: "User $p's Post 2", text: "Text of post 2", occurTime: new Date()))
-			person.addToPosts(new Post(title: "User $p's Post 3", text: "Text of post 3", occurTime: new Date()))
-			person.addToPosts(new Post(title: "User $p's Post 4", text: "Text of post 4", occurTime: new Date()))
-			person.addToPosts(new Post(title: "User $p's Post 5", text: "Text of post 5", occurTime: new Date()))
 
+			for (q in 1..2) {
+				person.addToPosts(new Post(title: "User $p's Post $q", text: "Text of post q", occurTime: new Date()))
+				println "User $p's Post $q"
+			}
+			/*
 			person.posts.eachWithIndex {post, i ->
 				for (k in 1..3) {
 					post.addToComments(new Comment(person: person, text:  "Comment $k to user $p's post $i", occurTime:  new Date()))
 				}
 			}
+			*/
 		}
 
 		Person.list().eachWithIndex {p1, i1 ->
 			Person.list().eachWithIndex {p2, i2 ->
-				if (p1.username != p2.username && (i1 % 2) == (i2 % 2) ) {
+				if (p1.username != p2.username /* && (i1 % 2) == (i2 % 2) */) {
 					p1.addToFriends(p2)
+				}
+			}
+		}
+
+		Post.list().eachWithIndex {post, i ->
+			Person.list().eachWithIndex {person, j ->
+				if (post.person.username != person.username) {
+					//if (post.person.isFriendOf(person)) {
+						//if ((i % 2) == (j % 2)) {
+					        println "${post.title} liked by ${person.username}"
+							post.addToLikedBy(person)
+						//}
+					//}
 				}
 			}
 		}
