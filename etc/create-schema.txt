@@ -50,5 +50,74 @@ use docs_expandos;
 create column family Event with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Event_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
+create keyspace orm_test;
+use orm_test;
+create column family User
+    with comparator=UTF8Type
+    and column_metadata=[
+        {column_name: city, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: state, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: zip, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: e164phone, validation_class: UTF8Type, index_type: KEYS}
+    ];
+create column family User_IDX
+    with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person
+    with comparator=UTF8Type
+    and column_metadata=[
+        {column_name: city, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: state, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: zip, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: e164phone, validation_class: UTF8Type, index_type: KEYS}
+    ];
+create column family Person_IDX
+    with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Person_CTR
+    with comparator = UTF8Type
+    and default_validation_class = CounterColumnType;
+create column family Car
+    with comparator=UTF8Type
+    and column_metadata=[
+        {column_name: make, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: year, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: color, validation_class: UTF8Type, index_type: KEYS}
+    ];
+create column family Car_IDX
+    with comparator=UTF8Type and default_validation_class=UTF8Type;
+
+create column family Household
+    with comparator=UTF8Type
+    and column_metadata=[
+        {column_name: city, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: state, validation_class: UTF8Type, index_type: KEYS},
+        {column_name: zip, validation_class: UTF8Type, index_type: KEYS}
+    ];
+create column family Household_IDX
+    with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Student
+    with comparator=UTF8Type
+    and column_metadata=[
+        {column_name: age, validation_class: UTF8Type, index_type: KEYS}
+    ];
+create column family Student_IDX
+    with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Student_CTR
+    with comparator = UTF8Type
+    and default_validation_class = CounterColumnType;
+create column family Course with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Course_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family School with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family School_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Transcript with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Transcript_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Conference with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Conference_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Grade with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Grade_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family LogEntry with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family LogEntry_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+
+
+
 
 
