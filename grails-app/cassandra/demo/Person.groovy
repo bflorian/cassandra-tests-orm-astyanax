@@ -22,5 +22,4 @@ class Person
 	{
 		friendsCount(start: person.id, finish: person.id) > 0
 	}
-
 }

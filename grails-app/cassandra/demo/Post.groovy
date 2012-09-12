@@ -6,7 +6,6 @@ package demo
 class Post 
 {
 	UUID uuid
-	String title
 	String text
 	Date occurTime
 
@@ -24,4 +23,10 @@ class Post
 			],
 			keySpace: "demo"
 	]
+
+
+	Boolean isLikedBy(person)
+	{
+		likedByCount(start:person.id, finish:person.id) > 0
+	}
 }

@@ -3,10 +3,9 @@ package example
 /**
  * @author: Bob Florian
  */
-class Post 
+class Post
 {
 	UUID uuid
-	String title
 	String text
 	Date occurTime
 
@@ -20,9 +19,14 @@ class Post
 	static cassandraMapping = [
 			primaryKey: 'uuid',
 			counters: [
-					[groupBy: ['occurTime']],
-					[findBy:  ['person'], groupBy:['occurTime']]
+					[groupBy: ['occurTime']]
 			],
 			keySpace: "example"
 	]
+
+
+	Boolean isLikedBy(person)
+	{
+		likedByCount(start:person.id, finish:person.id) > 0
+	}
 }

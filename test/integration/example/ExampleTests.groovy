@@ -8,45 +8,75 @@ import static org.junit.Assert.*
  */
 class ExampleTests 
 {
+	def astyanaxService
+
 	@Test
-	void testSetup()
+	void testSetup1()
 	{
-		for (p in 1..3) {
+		def numPersons = 2
+		def postsPerPerson = 1
+		def commentsPerPost = [1] //,2,3]
+		def likesPerPost = [0,1]
+		def likesPerComment = [0,1]
+
+		// persons
+		for (p in 1..numPersons) {
 			def person = new Person(username: "user$p").save()
 
-			for (q in 1..2) {
-				person.addToPosts(new Post(title: "User $p's Post $q", text: "Text of post q", occurTime: new Date()))
-				println "User $p's Post $q"
-			}
-			/*
-			person.posts.eachWithIndex {post, i ->
-				for (k in 1..3) {
-					post.addToComments(new Comment(person: person, text:  "Comment $k to user $p's post $i", occurTime:  new Date()))
-				}
-			}
-			*/
 		}
 
+		// friendships
 		Person.list().eachWithIndex {p1, i1 ->
 			Person.list().eachWithIndex {p2, i2 ->
-				if (p1.username != p2.username /* && (i1 % 2) == (i2 % 2) */) {
-					p1.addToFriends(p2)
-				}
+				//if (p1.username != p2.username /* && (i1 % 2) == (i2 % 2) */) {
+					p1.addToFriends(p2).addToFriends(p1)
+				//}
 			}
 		}
 
-		Post.list().eachWithIndex {post, i ->
-			Person.list().eachWithIndex {person, j ->
-				if (post.person.username != person.username) {
-					//if (post.person.isFriendOf(person)) {
-						//if ((i % 2) == (j % 2)) {
-					        println "${post.title} liked by ${person.username}"
-							post.addToLikedBy(person)
-						//}
-					//}
-				}
+		// posts
+		Person.list().eachWithIndex {person, pi ->
+			for (q in 1..postsPerPerson) {
+				person.addToPosts(new Post(text: "User ${pi+1}'s Post $q", occurTime: new Date()))
+				println "User ${pi+1}'s Post $q"
 			}
 		}
+
+		// comments
+		List persons = Person.list()
+		Post.list().eachWithIndex {post, pi ->
+			def cppi = commentsPerPost.size() == 1 ? 0 : rand.nextInt(commentsPerPost.size())
+			def numComments = commentsPerPost[cppi]
+			for (i in 1..numComments) {
+				def ui = rand.nextInt(persons.size())
+				def person = persons[ui]
+				post.addToComments(new Comment(text: "Comments to post ${pi+1} from user ${ui+1}", occurTime: new Date(), person: person))
+			}
+		}
+
+		// post likes
+		Post.list().eachWithIndex {post, pi ->
+			def cppi = likesPerPost.size() == 1 ? 0 : rand.nextInt(likesPerPost.size())
+			def numLikes = likesPerPost[cppi]
+			for (i in 1..numLikes) {
+				def ui = rand.nextInt(persons.size())
+				def person = persons[ui]
+				post.addToLikedBy(person)
+			}
+		}
+
+		// comment likes
+		Comment.list().eachWithIndex {comment, pi ->
+			def cppi = likesPerComment.size() == 1 ? 0 : rand.nextInt(likesPerComment.size())
+			def numLikes = likesPerComment[cppi]
+			for (i in 1..numLikes) {
+				def ui = rand.nextInt(persons.size())
+				def person = persons[ui]
+				comment.addToLikedBy(person)
+			}
+		}
+
+		astyanaxService.showColumnFamilies(["Person","Person_IDX","Post","Post_IDX","Post_CTR","Comment","Comment_IDX","Comment_CTR"], "example","standard",100,100)
 	}
 
 	@Test
@@ -68,8 +98,10 @@ class ExampleTests
 	{
 		def feed1 = Person.get("user1").traverseRelationships.friends.posts(max:2, reversed: true).execute(max: 5, reversed:  true)
 		feed1.each {
-			println it.title
+			println it.text
 		}
 	}
+
+	def rand = new Random()
 
 }
