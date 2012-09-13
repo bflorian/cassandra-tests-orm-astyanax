@@ -40,6 +40,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/test/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/test/integration" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../cassandra-astyanax/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../cassandra-astyanax/target/test-classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
