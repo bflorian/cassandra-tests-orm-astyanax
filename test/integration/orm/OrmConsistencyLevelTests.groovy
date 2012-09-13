@@ -1,8 +1,8 @@
-package com.reachlocal.grails.plugins.cassandra.test
+package orm
 
 import org.junit.Test
 import static org.junit.Assert.*
-import com.reachlocal.grails.plugins.cassandra.test.orm.Car
+import orm.Car
 import com.netflix.astyanax.model.ConsistencyLevel
 
 /**

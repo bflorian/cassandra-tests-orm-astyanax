@@ -1,7 +1,6 @@
-package com.reachlocal.grails.plugins.cassandra.test
+package orm
 
-import com.reachlocal.grails.plugins.cassandra.mapping.OrmUtility
-import com.reachlocal.grails.plugins.cassandra.test.orm.*
+import orm.*
 
 /**
  * @author: Bob Florian

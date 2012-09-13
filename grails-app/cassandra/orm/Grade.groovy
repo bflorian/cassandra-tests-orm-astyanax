@@ -14,21 +14,29 @@
  * limitations under the License.
  */
 
-package com.reachlocal.grails.plugins.cassandra.test.orm
+package orm
 
 /**
- * @author Bob Florian
+ * @author: Bob Florian
  */
-class Course
+class Grade 
 {
-	String title
-	String description
+	UUID uuid = UUID.timeUUID()
+	Date date
+	Float pointValue
+	Transcript transcript
+	Course course
+	static belongsTo = [transcript: Transcript, course: Course]
 
-	List students
-	static hasMany = [students: Student]
+	static transients = ["timestamp"]
 
-	static cassandraMapping =[
-			primaryKey: ['title'],
+	static cassandraMapping = [
+	        primaryKey : "uuid",
 			keySpace: "orm_test"
 	]
+
+	Long getTimestamp()
+	{
+		return date.time
+	}
 }

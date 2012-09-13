@@ -14,29 +14,28 @@
  * limitations under the License.
  */
 
-package com.reachlocal.grails.plugins.cassandra.test.orm
+package orm
 
 /**
- * @author Bob Florian
+ * @author: Bob Florian
  */
-class Student
+class Car 
 {
-	String uuid = UUID.timeUUID().toString()
-	String firstName
-	String lastName
-	Integer age
+	String uuid
+	String make
+	String model
+	String color
+	Integer year
+	Integer price
+	Map data
 
-	static belongsTo = [household: Household]
-	Household household
-
-	static hasMany = [courses: Course]
-	List courses
-
-	static cassandraMapping =[
+	static cassandraMapping = [
 			primaryKey: 'uuid',
-			secondaryIndexes: ['age'],
-			explicitIndexes: ['lastName'],
-			counters: [[groupBy: 'age']],
+			secondaryIndexes: ['make','year','color'],
+			explicitIndexes: [['make','model'],['make','model','year']],
+			expandoMap: 'data',
+			timeToLive: [price: 10],
 			keySpace: "orm_test"
 	]
+
 }

@@ -1,7 +1,7 @@
-package com.reachlocal.grails.plugins.cassandra.test
+package orm
 
-import com.reachlocal.grails.plugins.cassandra.test.orm.Car
-import com.reachlocal.grails.plugins.cassandra.test.orm.Person
+import orm.Car
+import orm.Person
 
 /**
  * @author: Bob Florian

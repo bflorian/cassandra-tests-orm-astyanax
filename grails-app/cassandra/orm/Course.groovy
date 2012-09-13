@@ -14,31 +14,21 @@
  * limitations under the License.
  */
 
-package com.reachlocal.grails.plugins.cassandra.test.orm
+package orm
 
 /**
  * @author Bob Florian
  */
-class Household
+class Course
 {
-	String emailAddress
-	String address1
-	String address2
-	String city
-	String state
-	String zip
-	String phone
-	Integer age
-	List occupations
-	List students
-	Boolean ptaMember
+	String title
+	String description
 
+	List students
 	static hasMany = [students: Student]
 
-	static cassandraMapping = [
-			primaryKey: 'emailAddress',
-			secondaryIndexes: ['city','state','zip'],
-	        explicitIndexes: ['phone'],
+	static cassandraMapping =[
+			primaryKey: ['title'],
 			keySpace: "orm_test"
 	]
 }

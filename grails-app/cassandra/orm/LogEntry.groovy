@@ -1,4 +1,4 @@
-package com.reachlocal.grails.plugins.cassandra.test.orm
+package orm
 
 /**
  * @author: Bob Florian

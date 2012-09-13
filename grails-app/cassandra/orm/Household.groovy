@@ -14,26 +14,31 @@
  * limitations under the License.
  */
 
-package com.reachlocal.grails.plugins.cassandra.test.orm
+package orm
 
 /**
- * @author: Bob Florian
+ * @author Bob Florian
  */
-class Transcript 
+class Household
 {
-	String uuid = UUID.randomUUID().toString()
-	Student student
-	TranscriptStatus status = TranscriptStatus.CURRENT
-	School school
-	static belongsTo = [school:School, student:Student]
+	String emailAddress
+	String address1
+	String address2
+	String city
+	String state
+	String zip
+	String phone
+	Integer age
+	List occupations
+	List students
+	Boolean ptaMember
 
-	List grades
-	static hasMany = [grades: Grade]
+	static hasMany = [students: Student]
 
 	static cassandraMapping = [
-	        primaryKey : "uuid",
+			primaryKey: 'emailAddress',
+			secondaryIndexes: ['city','state','zip'],
+	        explicitIndexes: ['phone'],
 			keySpace: "orm_test"
 	]
 }
-
-enum TranscriptStatus {CURRENT, CLOSED}

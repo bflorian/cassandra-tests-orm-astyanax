@@ -1,11 +1,11 @@
-package com.reachlocal.grails.plugins.cassandra.test
+package orm
 
-import com.reachlocal.grails.plugins.cassandra.test.orm.Household
-import com.reachlocal.grails.plugins.cassandra.test.orm.School
-import com.reachlocal.grails.plugins.cassandra.test.orm.Course
-import com.reachlocal.grails.plugins.cassandra.test.orm.Student
-import com.reachlocal.grails.plugins.cassandra.test.orm.Transcript
-import com.reachlocal.grails.plugins.cassandra.test.orm.Grade
+import orm.Household
+import orm.School
+import orm.Course
+import orm.Student
+import orm.Transcript
+import orm.Grade
 
 /**
  * @author: Bob Florian

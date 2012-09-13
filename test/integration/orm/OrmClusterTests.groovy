@@ -1,11 +1,11 @@
-package com.reachlocal.grails.plugins.cassandra.test
+package orm
 
 import org.junit.Test;
 import static org.junit.Assert.*
-import com.reachlocal.grails.plugins.cassandra.test.orm.Car
-import com.reachlocal.grails.plugins.cassandra.test.orm.Household
-import com.reachlocal.grails.plugins.cassandra.test.orm.Student
-import com.reachlocal.grails.plugins.cassandra.test.orm.Person
+import orm.Car
+import orm.Household
+import orm.Student
+import orm.Person
 import java.text.SimpleDateFormat
 
 /**

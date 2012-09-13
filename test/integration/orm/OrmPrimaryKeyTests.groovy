@@ -14,13 +14,9 @@
  * limitations under the License.
  */
 
-package com.reachlocal.grails.plugins.cassandra.test
+package orm
 
-import com.reachlocal.grails.plugins.cassandra.test.orm.Household
-import com.reachlocal.grails.plugins.cassandra.test.orm.Student
-import com.reachlocal.grails.plugins.cassandra.test.orm.Course
-import com.reachlocal.grails.plugins.cassandra.mapping.OrmUtility
-import com.reachlocal.grails.plugins.cassandra.test.orm.School
+import orm.Household
 
 /**
  * @author: Bob Florian
