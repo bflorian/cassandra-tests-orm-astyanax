@@ -9,7 +9,7 @@ class ConsoleController
 {
 	def consoleService
 	def keyspace = "websites"
-	def columnFamilies = ["Visit":"", "Action":""]
+	def columnFamilies = [Visit:"", Action:"", WebsiteVisit:"", WebsiteAction: ""]
 
 	def index()
 	{
@@ -24,7 +24,7 @@ class ConsoleController
 		def result = [columnFamilyName: columnFamily]
 
 		try {
-			result.output = consoleService.executeScript(script)
+			result.output = consoleService.executeScript("import websites.*;\n" + script)
 			if (columnFamily) {
 				result.columnFamily = consoleService.showColumnFamily(keyspace,columnFamily)
 			}

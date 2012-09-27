@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>Console</title>
+  <title>ORM Console</title>
 	<r:require modules="jquery,bootstrap,codemirror"/>
 	<g:javascript>
 		var scriptMirror;

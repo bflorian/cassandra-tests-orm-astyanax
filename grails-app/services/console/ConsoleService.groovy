@@ -44,14 +44,16 @@ class ConsoleService
 				.withColumnRange(new RangeBuilder().setMaxSize(maxColumns).build())
 				.execute()
 				.result.each{row ->
-
-			sb << "${row.key} =>\n"
-			row.columns.each {col ->
-				try {
-					sb << "    ${col.name} => '${col.stringValue}'\n"
-				}
-				catch (Exception ex) {
-					sb << "    ${col.name} => ${col.longValue}\n"
+			def cols = row.columns
+			if (cols?.size() > 0) {
+				sb << "${row.key} =>\n"
+				cols.each {col ->
+					try {
+						sb << "    ${col.name} => '${col.stringValue}'\n"
+					}
+					catch (Exception ex) {
+						sb << "    ${col.name} => ${col.longValue}\n"
+					}
 				}
 			}
 		}

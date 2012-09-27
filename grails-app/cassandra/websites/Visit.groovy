@@ -7,9 +7,12 @@ class Visit
 {
 	UUID uuid
 	String visitorId
+	Date occurTime
 	String refType
 	String refName
-	Date occurTime
+	Boolean bounced = true
+	Long timeOnSite = 0L
+	Integer totalActions = 1
 
 	static hasMany = [actions: Action]
 

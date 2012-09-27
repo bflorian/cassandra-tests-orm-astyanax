@@ -7,7 +7,7 @@ div#wrap {
 }
 
 div#script_panel {
-    width: 55%;
+    width: 53%;
     padding: 10px;
 }
 div#script_panel div.wrap {
@@ -15,7 +15,7 @@ div#script_panel div.wrap {
 }
 
 div#output_panel {
-    width: 55%;
+    width: 53%;
     padding: 0 10px;
 }
 
@@ -25,7 +25,7 @@ div#output_panel div.wrap {
 
 div#keyspace_panel {
     height: 90%;
-    width: 43%;
+    width: 45%;
     padding: 10px;
     float: right;
 }
@@ -36,4 +36,8 @@ div#keyspace_panel div.wrap {
 
 form {
     margin-top: 5px;
+}
+
+.CodeMirror {
+    font-size: 14pt;
 }
