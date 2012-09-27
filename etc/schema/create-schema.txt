@@ -117,6 +117,22 @@ create column family Grade_IDX with comparator=UTF8Type and default_validation_c
 create column family LogEntry with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family LogEntry_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
+create keyspace websites;
+use websites;
+create column family Visit with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Visit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Visit_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family Action with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Action_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Action_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family WebsiteVisit with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family WebsiteVisit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family WebsiteVisit_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family WebsiteAction with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family WebsiteAction_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family WebsiteAction_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+
+
 
 
 

@@ -3,8 +3,8 @@ class BootStrap {
     def init = { servletContext ->
 		if (System.getProperty('dsePath')) {
 			log.info "init"
-			runCqlScript("etc/drop-schema.txt")
-			runCqlScript("etc/create-schema.txt")
+			runCqlScript("etc/schema/drop-schema.txt")
+			runCqlScript("etc/schema/create-schema.txt")
 			log.info "init completed"
 		}
     }

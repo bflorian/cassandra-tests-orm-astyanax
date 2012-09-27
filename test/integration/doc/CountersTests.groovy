@@ -133,6 +133,13 @@ class CountersTests extends ExamplesBase
 		assertEquals 6, result[0].size()
 	}
 
+	void testTimeFormat()
+	{
+		def result = processFile(document, imports, "Visit.getCountsGroupByOccurTime(dateFormat: 'HH')")
+		assertEquals 1, result.size()
+		//assertEquals 6, result[0].size()
+	}
+
 	static df = new SimpleDateFormat("yyyy-MM-dd")
 	static tf = new SimpleDateFormat("yyyy-MM-dd HH:mm")
 }

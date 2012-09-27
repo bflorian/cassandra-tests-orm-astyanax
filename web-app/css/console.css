@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+}
+
+div#wrap {
+    height: 100%;
+}
+
+div#script_panel {
+    width: 55%;
+    padding: 10px;
+}
+div#script_panel div.wrap {
+    border: 1px solid #ccc;
+}
+
+div#output_panel {
+    width: 55%;
+    padding: 0 10px;
+}
+
+div#output_panel div.wrap {
+    border: 1px solid #ccc;
+}
+
+div#keyspace_panel {
+    height: 90%;
+    width: 43%;
+    padding: 10px;
+    float: right;
+}
+
+div#keyspace_panel div.wrap {
+    border: 1px solid #ccc;
+}
+
+form {
+    margin-top: 5px;
+}
