@@ -21,18 +21,19 @@ class WebsiteVisit
 	static hasMany = [actions: WebsiteAction]
 
 	static cassandraMapping = [
-			primaryKey: 'uuid',
+			primaryKey: 'visitId',
 
 			explicitIndexes: [
 					['visitorId'],
+					['refClass'],
 					['refType']
 			],
 
 			counters: [
 					[groupBy: ['occurTime']],
+					[groupBy: ['occurTime','refClass','refType']],
 					[groupBy: ['occurTime','refClass','refType','refName']],
-					[groupBy: ['occurTime','refClass','refType','refName','refKeyword']],
-					[groupBy: ['occurTime','refClass','refType','pageTitle']]
+					[groupBy: ['occurTime','refClass','refType','refName','refKeyword']]
 			],
 
 			keySpace: "websites"

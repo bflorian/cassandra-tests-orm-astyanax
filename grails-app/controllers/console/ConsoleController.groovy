@@ -9,7 +9,9 @@ class ConsoleController
 {
 	def consoleService
 	def keyspace = "websites"
-	def columnFamilies = [Visit:"", Action:"", WebsiteVisit:"", WebsiteAction: ""]
+	def columnFamilies = [
+			Visit:"websites", Action:"websites", WebsiteVisit:"websites",
+			Person:"example", Post:"example", Comment:"example"]
 
 	def index()
 	{
@@ -20,13 +22,15 @@ class ConsoleController
 	{
 		def script = params.script
 		def columnFamily = params.columnFamily
+		def className = columnFamily.split("_")[0]
+		def ks = columnFamilies[className]
 
 		def result = [columnFamilyName: columnFamily]
 
 		try {
-			result.output = consoleService.executeScript("import websites.*;\n" + script)
-			if (columnFamily) {
-				result.columnFamily = consoleService.showColumnFamily(keyspace,columnFamily)
+			result.output = consoleService.executeScript("import example.*;\nimport websites.*;" + script)
+			if (ks && columnFamily) {
+				result.columnFamily = consoleService.showColumnFamily(ks, columnFamily)
 			}
 			scripts.add(0, script)
 			scriptIndex = 0
@@ -41,10 +45,18 @@ class ConsoleController
 	def showColumnFamily()
 	{
 		def columnFamily = params.columnFamily
+		def className = columnFamily.split("_")[0]
 		def result = [
 				columnFamilyName: columnFamily,
-				columnFamily: consoleService.showColumnFamily(keyspace,columnFamily)
+				columnFamily: consoleService.showColumnFamily(columnFamilies[className],columnFamily)
 		]
+		render result as JSON
+	}
+
+	def showSource()
+	{
+		def name = params.name
+		def result = [source: source(name), name: "${name}"]
 		render result as JSON
 	}
 
@@ -75,6 +87,12 @@ class ConsoleController
 		def sw = new StringWriter()
 		e.printStackTrace(new PrintWriter(sw))
 		return sw.toString()
+	}
+
+	private source(name)
+	{
+		def file = new File("grails-app/cassandra/${columnFamilies[name]}/${name}.groovy")
+		return file.text
 	}
 
 	static scriptIndex = 0;
