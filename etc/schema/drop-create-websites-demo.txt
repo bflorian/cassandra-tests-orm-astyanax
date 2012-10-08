@@ -1,0 +1,14 @@
+use websites;
+drop column family Visit;
+drop column family Visit_IDX;
+drop column family Visit_CTR;
+drop column family Action;
+drop column family Action_IDX;
+drop column family Action_CTR;
+create column family Visit with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Visit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Visit_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+create column family Action with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Action_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Action_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+

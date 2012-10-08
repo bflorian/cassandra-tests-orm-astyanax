@@ -9,9 +9,11 @@ class ConsoleController
 {
 	def consoleService
 	def keyspace = "websites"
-	def columnFamilies = [
+	def columnFamilies =
+		[
 			Visit:"websites", Action:"websites", WebsiteVisit:"websites",
-			Person:"example", Post:"example", Comment:"example"]
+			//Person:"example", Post:"example", Comment:"example"
+	]
 
 	def index()
 	{
@@ -32,8 +34,7 @@ class ConsoleController
 			if (ks && columnFamily) {
 				result.columnFamily = consoleService.showColumnFamily(ks, columnFamily)
 			}
-			scripts.add(0, script)
-			scriptIndex = 0
+			scripts.add(script)
 		}
 		catch (Exception e) {
 			result.error = stackTrace(e)
@@ -62,24 +63,12 @@ class ConsoleController
 
 	def prevScript()
 	{
-		if (scriptIndex < scripts.size()-1) {
-			scriptIndex++
-			render text: scripts[scriptIndex]
-		}
-		else {
-			render text:  ''
-		}
+		render text: scripts.previous()
 	}
 
 	def nextScript()
 	{
-		if (scriptIndex > 0) {
-			scriptIndex--
-			render text: scripts[scriptIndex]
-		}
-		else {
-			render text:  ''
-		}
+		render text: scripts.next()
 	}
 
 	private stackTrace(e)
@@ -95,6 +84,15 @@ class ConsoleController
 		return file.text
 	}
 
-	static scriptIndex = 0;
-	static scripts = []
+	private ScriptSet getScripts()
+	{
+		def result = session.getAttribute(SCRIPT_KEY)
+		if (!result) {
+			result = new ScriptSet(session.id)
+			session.setAttribute(SCRIPT_KEY, result)
+		}
+		return result
+	}
+
+	static final String SCRIPT_KEY = "ScriptSet"
 }

@@ -8,6 +8,7 @@ class WebsiteVisit
 
 	UUID visitId
 	UUID visitorId
+	String siteId
 	Date occurTime
 	String refUrl            // Value of Referer HTTP header param
 	String refClass          // ReachLocal | Organic
@@ -21,19 +22,20 @@ class WebsiteVisit
 	static hasMany = [actions: WebsiteAction]
 
 	static cassandraMapping = [
-			primaryKey: 'visitId',
+			unindexedPrimaryKey: 'visitId',
 
 			explicitIndexes: [
+					['siteId'],
 					['visitorId'],
 					['refClass'],
 					['refType']
 			],
 
 			counters: [
-					[groupBy: ['occurTime']],
-					[groupBy: ['occurTime','refClass','refType']],
-					[groupBy: ['occurTime','refClass','refType','refName']],
-					[groupBy: ['occurTime','refClass','refType','refName','refKeyword']]
+					[findBy:['siteId'], groupBy: ['occurTime']],
+					[findBy:['siteId'], groupBy: ['occurTime','refClass','refType']],
+					[findBy:['siteId'], groupBy: ['occurTime','refClass','refType','refName']],
+					[findBy:['siteId'], groupBy: ['occurTime','refClass','refType','refName','refKeyword']]
 			],
 
 			keySpace: "websites"

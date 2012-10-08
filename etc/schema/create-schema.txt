@@ -128,9 +128,6 @@ create column family Action_CTR with comparator=UTF8Type and default_validation_
 create column family WebsiteVisit with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family WebsiteVisit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family WebsiteVisit_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
-create column family WebsiteAction with comparator=UTF8Type and default_validation_class=UTF8Type;
-create column family WebsiteAction_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
-create column family WebsiteAction_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
 
 
 

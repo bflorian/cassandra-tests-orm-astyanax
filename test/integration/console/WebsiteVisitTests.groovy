@@ -16,10 +16,11 @@ class WebsiteVisitTests
 		def ISO_TS = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
 		ISO_TS.setTimeZone(TimeZone.getTimeZone("GMT"))
 
-		def file = new File("etc/data/visits.json")
+		def file = "etc/data/browns-arlington-honda.json" //new File("etc/data/visits.json")
 		def json = new JsonSlurper().parse(new FileReader(file))
 		json.each {
 			new WebsiteVisit(
+					siteId:  "SITE1",
 					visitId: it.visitId.toUUID(),
 					visitorId: it.visitorId.toUUID(),
 					occurTime: ISO_TS.parse(it.occurTime),

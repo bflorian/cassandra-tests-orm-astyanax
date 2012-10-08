@@ -8,11 +8,10 @@ class Visit
 	UUID uuid
 	String visitorId
 	Date occurTime
-	String refType
+	RefType refType
 	String refName
 	Boolean bounced = true
 	Long timeOnSite = 0L
-	Integer totalActions = 1
 
 	static hasMany = [actions: Action]
 
@@ -25,11 +24,11 @@ class Visit
 			],
 
 			counters: [
-					[groupBy: ['occurTime']],
 					[groupBy: ['occurTime','refType','refName']],
-					[findBy: ['visitorId'], groupBy: ['occurTime','refType','refName']]
 			],
 
 			keySpace: "websites"
 	]
 }
+
+enum RefType {DIRECT, SEARCH, SOCIAL, DIRECTORY, OTHER}
