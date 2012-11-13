@@ -13,6 +13,7 @@ class ConsoleController
 		[
 			Visit:"websites", Action:"websites", WebsiteVisit:"websites",
 			//Person:"example", Post:"example", Comment:"example"
+			Like:"misc"
 	]
 
 	def index()
@@ -30,7 +31,8 @@ class ConsoleController
 		def result = [columnFamilyName: columnFamily]
 
 		try {
-			result.output = consoleService.executeScript("import example.*;\nimport websites.*;" + script)
+			def imports = columnFamilies.collect{"import ${it.value}.*;"}.join("\n")
+			result.output = consoleService.executeScript(imports + "\n" + script)
 			if (ks && columnFamily) {
 				result.columnFamily = consoleService.showColumnFamily(ks, columnFamily)
 			}

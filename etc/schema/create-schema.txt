@@ -50,6 +50,12 @@ use docs_expandos;
 create column family Event with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Event_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
+create keyspace misc;
+use misc;
+create column family Like with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Like_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
+create column family Like_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
+
 create keyspace orm_test;
 use orm_test;
 create column family User
