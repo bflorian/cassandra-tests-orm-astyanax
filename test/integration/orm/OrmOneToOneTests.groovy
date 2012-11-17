@@ -29,7 +29,7 @@ class OrmOneToOneTests extends GroovyTestCase
 		def c1 = new Car(uuid: "0001", make: "Honda", model: "Accord", color: "Gray", year: 2006)
 		c1.save()
 
-		def c2 = new Car(uuid: "0002", make: "Dodge", model: "Durango", color: "Blud", year: 2000)
+		def c2 = new Car(uuid: "0002", make: "Dodge", model: "Durango", color: "Blue", year: 2000)
 		c2.save()
 
 		def p = new Person(emailAddress: "bob@florian.org", firstCar: c1, secondCar:c2, firstName:"Bob", lastName:"Florian")
