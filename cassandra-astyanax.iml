@@ -29,16 +29,16 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../cassandra-astyanax">
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/test/integration" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/utils" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/controllers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/domain" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/test/unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../cassandra-astyanax/test/integration" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../cassandra-astyanax/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/../cassandra-astyanax/target/test-classes" />
     </content>

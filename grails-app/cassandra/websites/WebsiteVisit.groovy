@@ -15,6 +15,7 @@ class WebsiteVisit
 	String refType              // Direct | Search | Directory | Social | Other Website
 	String refName              // Name of know sites (i.e. Google, Bing) or domain name
 	String refKeyword           // Search expression (set for refType == Search only)
+    String refPage
 	String pageUrl              // URL of the requested page (i.e. document.URL)
 	String pageTitle            // Title of the requested page (i.e. document.title) or the URL if title not set
 	Boolean newVisitor = true   // True for first visit by this visitor, otherwise false

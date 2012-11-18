@@ -59,12 +59,12 @@ class OrmTimeToLiveTests extends GroovyTestCase
 
 		def entry = LogEntry.get(uuid)
 		assertEquals "Log message text", entry.message
-		astyanaxService.showColumnFamilies(["LogEntry", "LogEntry_IDX"], "AstyanaxOrmTest")
+		astyanaxService.showColumnFamilies(["LogEntry", "LogEntry_IDX"], "orm_test")
 
 		Thread.sleep(11000L)
 		entry = LogEntry.get(uuid)
 		assertNull entry
-		astyanaxService.showColumnFamilies(["LogEntry", "LogEntry_IDX"], "AstyanaxOrmTest")
+		astyanaxService.showColumnFamilies(["LogEntry", "LogEntry_IDX"], "orm_test")
 	}
 
 	void testTtlFieldParameter()
