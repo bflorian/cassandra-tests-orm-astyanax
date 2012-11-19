@@ -25,25 +25,17 @@ class OrmPropertyTests extends GroovyTestCase
 		assertEquals 2011, car.year
 		assertEquals EngineType.GASOLINE, car.engineType
 
-	}
-
-	void testInsertNonNull()
-	{
-		def car = Car.get("${GUID}-1")
+		car = Car.get("${GUID}-1")
 		car.insert(color: "White")
 		assertEquals "White", Car.get("${GUID}-1").color
-	}
 
-	void testInsertNull()
-	{
-		def car = Car.get("${GUID}-1")
+
+		car = Car.get("${GUID}-1")
 		car.insert(color: null)
 		assertNull Car.get("${GUID}-1").color
-	}
 
-	void testSaveNull()
-	{
-		def car = Car.get("${GUID}-1")
+
+		car = Car.get("${GUID}-1")
 		car.model = null
 		car.color = "Red"
 		car.save()
