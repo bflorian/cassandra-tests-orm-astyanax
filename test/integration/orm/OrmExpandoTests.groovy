@@ -64,6 +64,34 @@ class OrmExpandoTests extends GroovyTestCase
 		assertEquals "EX-V6", car.trimLevel
 	}
 
+	void testInsertNonNull()
+	{
+		def car = Car.get("${GUID}-2")
+		car.insert(trimLevel: "EX")
+
+		assertEquals "EX", Car.get("${GUID}-2").trimLevel
+	}
+
+	void testInsertNull()
+	{
+		def car = Car.get("${GUID}-2")
+		car.insert(trimLevel: null)
+
+		assertNull Car.get("${GUID}-2").trimLevel
+	}
+
+
+	void testSaveNull()
+	{
+		def car = Car.get("${GUID}-2")
+		assertEquals "FWD", car.drivetrain
+
+		car.drivetrain = null
+		car.save()
+
+		assertNull Car.get("${GUID}-2").drivetrain
+	}
+
 	void testMappedObjectIds()
 	{
 		def uuid = "${GUID}-3"
