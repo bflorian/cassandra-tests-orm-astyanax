@@ -27,6 +27,7 @@ class Car
 	String color
 	Integer year
 	Integer price
+	EngineType engineType
 	Map data
 
 	static cassandraMapping = [
