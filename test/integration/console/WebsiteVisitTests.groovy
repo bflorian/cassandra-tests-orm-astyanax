@@ -16,8 +16,8 @@ class WebsiteVisitTests
 		def ISO_TS = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
 		ISO_TS.setTimeZone(TimeZone.getTimeZone("GMT"))
 
-		def file = "etc/data/browns-arlington-honda.json"
-        file = new File("etc/data/visits.json")
+		def file = new File("etc/data/visits.json")
+        //file = new File("etc/data/browns-arlington-honda.json")
 		def json = new JsonSlurper().parse(new FileReader(file))
         def t0 = System.currentTimeMillis()
 		json.each {
