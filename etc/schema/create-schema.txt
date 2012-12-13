@@ -1,4 +1,7 @@
-create keyspace example;
+create keyspace example
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use example;
 create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
@@ -11,7 +14,10 @@ create column family Comment_IDX with comparator=UTF8Type and default_validation
 create column family Comment_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
 
 
-create keyspace docs_gettingstarted;
+create keyspace docs_gettingstarted
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use docs_gettingstarted;
 create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
@@ -21,7 +27,10 @@ create column family Post_IDX with comparator=UTF8Type and default_validation_cl
 create column family Post_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
 
 
-create keyspace docs_secondaryindexes;
+create keyspace docs_secondaryindexes
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use docs_secondaryindexes;
 create column family Person
     with comparator=UTF8Type
@@ -34,29 +43,44 @@ create column family Person
 create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
 
-create keyspace docs_explicitindexes;
+create keyspace docs_explicitindexes
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use docs_explicitindexes;
 create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
-create keyspace docs_counters;
+create keyspace docs_counters
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use docs_counters;
 create column family Visit with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Visit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Visit_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
 
-create keyspace docs_expandos;
+create keyspace docs_expandos
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use docs_expandos;
 create column family Event with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Event_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
-create keyspace misc;
+create keyspace misc
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use misc;
 create column family Like with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Like_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Like_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
 
-create keyspace orm_test;
+create keyspace orm_test
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use orm_test;
 create column family User
     with comparator=UTF8Type
@@ -123,7 +147,10 @@ create column family Grade_IDX with comparator=UTF8Type and default_validation_c
 create column family LogEntry with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family LogEntry_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 
-create keyspace websites;
+create keyspace websites
+    with strategy_options = {replication_factor:1}
+    and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
+
 use websites;
 create column family Visit with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Visit_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
