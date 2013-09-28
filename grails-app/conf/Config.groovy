@@ -80,6 +80,7 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+	debug 'com.netflix.astyanax.connectionpool.impl.Slf4jConnectionPoolMonitorImpl'
 
     info  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
@@ -101,13 +102,13 @@ cassandra {
 astyanax {
 	clusters {
 		standard {
-			seeds = ["localhost:9160"]
+			seeds = "localhost:9160"
 		}
 		gettingstarted {
-			seeds = ["localhost:9160"]
+			seeds = "localhost:9160"
 			defaultKeyspace = "docs_gettingstarted"
 		}
 	}
 	defaultCluster = 'standard'
-	defaultKeyspace = "orm_doc"
+	defaultKeyspace = "smartthings_jenkins"
 }
