@@ -23,7 +23,22 @@ import orm.Household
  */
 class OrmExplicitIndexTests extends GroovyTestCase
 {
-	void testFindAllBy1()
+	void testAll()
+	{
+		testFindAllBy1()
+		testFindAllByColumn()
+		testFindAllByColumns()
+		testFindAllByRawColumn()
+		testFindAllByRawColumns()
+		testFindAllByLimit()
+		testFindAllBy2()
+		testFindBy1()
+		testChangeFindAll()
+		testCountAll1()
+		testCountBy2()
+	}
+
+	private testFindAllBy1()
 	{
 		new Household(emailAddress: "ormse1@localhost.com", phone:"301-570-1111", city: "Pleasanton").save()
 		new Household(emailAddress: "ormse2@localhost.com", phone:"301-570-1234", city: "Pleasanton").save()
@@ -37,7 +52,7 @@ class OrmExplicitIndexTests extends GroovyTestCase
 		}
 	}
 
-	void testFindAllByColumn()
+	private testFindAllByColumn()
 	{
 		def list = Household.findAllByPhone("301-570-1111", [column: 'emailAddress'])
 		assertEquals(2, list.size())
@@ -46,7 +61,7 @@ class OrmExplicitIndexTests extends GroovyTestCase
 		}
 	}
 
-	void testFindAllByColumns()
+	private testFindAllByColumns()
 	{
 		def list = Household.findAllByPhone("301-570-1111", [columns: ['emailAddress','city']])
 		assertEquals(2, list.size())
@@ -58,7 +73,7 @@ class OrmExplicitIndexTests extends GroovyTestCase
 		}
 	}
 
-	void testFindAllByRawColumn()
+	private testFindAllByRawColumn()
 	{
 		def list = Household.findAllByPhone("301-570-1111", [rawColumn: 'emailAddress'])
 		assertEquals(2, list.size())
@@ -67,7 +82,7 @@ class OrmExplicitIndexTests extends GroovyTestCase
 		}
 	}
 
-	void testFindAllByRawColumns()
+	private testFindAllByRawColumns()
 	{
 		def list = Household.findAllByPhone("301-570-1111", [rawColumns: ['emailAddress','city']])
 		assertEquals(2, list.size())
@@ -79,25 +94,25 @@ class OrmExplicitIndexTests extends GroovyTestCase
 		}
 	}
 	
-	void testFindAllByLimit()
+	private testFindAllByLimit()
 	{
 		def list = Household.findAllByPhone("301-570-1111", [max:1])
 		assertEquals(1, list.size())
 	}
 
-	void testFindAllBy2()
+	private testFindAllBy2()
 	{
 		def list = Household.findAllByCity("Pleasanton")
 		assertEquals(3, list.size())
 	}
 
-	void testFindBy1()
+	private testFindBy1()
 	{
 		def obj = Household.findByPhone("301-570-1111")
 		assertEquals("301-570-1111", obj.phone)
 	}
 
-	void testChangeFindAll()
+	private testChangeFindAll()
 	{
 		def obj = Household.get("ormse1@localhost.com")
 		obj.phone = "301-570-2222"
@@ -112,13 +127,13 @@ class OrmExplicitIndexTests extends GroovyTestCase
 		assertEquals(2, Household.findAllByPhone("301-570-1111").size())
 	}
 
-	void testCountAll1()
+	private testCountAll1()
 	{
 		def count = Household.countByPhone("301-570-1111")
 		assertEquals 2, count
 	}
 
-	void testCountBy2()
+	private testCountBy2()
 	{
 		def count = Household.countByCity("Pleasanton")
 		assertEquals 3, count

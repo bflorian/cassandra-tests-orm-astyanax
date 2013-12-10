@@ -11,7 +11,16 @@ class ExampleTests
 	def astyanaxService
 
 	@Test
-	void testSetup1()
+	void testAll()
+	{
+		testSetup1()
+		testTraverseAll()
+		testTraverse32()
+		testFeed1()
+		testCascadeDelete()
+	}
+
+	private testSetup1()
 	{
 		def numPersons = 10 //2
 		def postsPerPerson = 5 //1
@@ -79,22 +88,19 @@ class ExampleTests
 		astyanaxService.showColumnFamilies(["Person","Person_IDX","Post","Post_IDX","Post_CTR","Comment","Comment_IDX","Comment_CTR"], "example","standard",100,100)
 	}
 
-	@Test
-	void testTraverseAll()
+	private testTraverseAll()
 	{
 		def feed1 = Person.get("user1").traverseRelationships.posts.comments.execute()
 		println feed1
 	}
 
-	@Test
-	void testTraverse32()
+	private testTraverse32()
 	{
 		def feed1 = Person.get("user1").traverseRelationships.posts(max:3, reversed: true).comments(max: 2, reversed: true).execute()
 		println feed1
 	}
 
-	@Test
-	void testFeed1()
+	private testFeed1()
 	{
 		def feed1 = Person.get("user1").traverseRelationships.friends.posts(max:2, reversed: true).execute(max: 5, reversed:  true)
 		feed1.each {
@@ -102,8 +108,7 @@ class ExampleTests
 		}
 	}
 
-	@Test
-	void testCascadeDelete()
+	private testCascadeDelete()
 	{
 		def u = Person.get("user1")
 		//assertEquals 3, Person.list().size()

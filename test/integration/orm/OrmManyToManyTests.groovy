@@ -24,7 +24,15 @@ import orm.Course
  */
 class OrmManyToManyTests extends GroovyTestCase
 {
-	void testSaveCascade()
+	void testAll()
+	{
+		testSaveCascade()
+		testAddTo()
+		testSaveCascade2()
+		testRemove()
+	}
+
+	private testSaveCascade()
 	{
 		def s = new Student(
 				firstName:"Albert",
@@ -46,7 +54,7 @@ class OrmManyToManyTests extends GroovyTestCase
 		assertEquals "Einstein", c.students[0].lastName
 	}
 
-	void testAddTo()
+	private testAddTo()
 	{
 		def s = Student.list().find{it.lastName == "Einstein"}
 		def c = new Course(title: "U.S. History 101", description: "History of the United States of America")
@@ -61,7 +69,7 @@ class OrmManyToManyTests extends GroovyTestCase
 		assertEquals "Einstein", c1.students[0].lastName
 	}
 
-	void testSaveCascade2()
+	private testSaveCascade2()
 	{
 		def course = Course.get("Introductory Physics 110")
 
@@ -85,7 +93,7 @@ class OrmManyToManyTests extends GroovyTestCase
 		assertEquals 2, c1.students.size()
 	}
 
-	void testRemove()
+	private testRemove()
 	{
 		def s = Student.list().find{it.lastName == "Einstein"}
 		assertEquals 3, s.courses.size()

@@ -23,7 +23,18 @@ import orm.Household
  */
 class OrmSecondaryIndexTests extends GroovyTestCase
 {
-	void testFindAllBy1()
+	void testAll()
+	{
+		testFindAllBy1()
+		testFindAllBy2()
+		testFindBy1()
+		testFindBy1A()
+		testFindAllBy3()
+		testFindAllLimit()
+		testChangeFindAll()
+	}
+
+	private testFindAllBy1()
 	{
 		new Household(emailAddress: "ormsi1@localhost.com", city:"Olney", state: "MD", zip:"20832").save()
 		new Household(emailAddress: "ormsi2@localhost.com", city:"Olney", state: "MD", zip:"20834").save()
@@ -34,19 +45,19 @@ class OrmSecondaryIndexTests extends GroovyTestCase
 		assertEquals(3, list.size())
 	}
 
-	void testFindAllBy2()
+	private testFindAllBy2()
 	{
 		def list = Household.findAllByCityAndState("Olney", "MD")
 		assertEquals(2, list.size())
 	}
 
-	void testFindBy1()
+	private testFindBy1()
 	{
 		def obj = Household.findByCity("Olney")
 		assertEquals("Olney", obj.city)
 	}
 
-	void testFindBy1A()
+	private testFindBy1A()
 	{
 		def obj = Household.findByCity("Reston")
 		assertEquals("Reston", obj.city)
@@ -54,19 +65,19 @@ class OrmSecondaryIndexTests extends GroovyTestCase
 		assertEquals("20191", obj.zip)
 	}
 
-	void testFindAllBy3()
+	private testFindAllBy3()
 	{
 		def list = Household.findAllByCityAndStateAndZip("Olney", "MD", "20834")
 		assertEquals(1, list.size())
 	}
 
-	void testFindAllLimit()
+	private testFindAllLimit()
 	{
 		def list = Household.findAllByCity("Olney", [max:2])
 		assertEquals(2, list.size())
 	}
 
-	void testChangeFindAll()
+	private testChangeFindAll()
 	{
 		def obj = Household.get("ormsi5@localhost.com")
 		obj.state = "MD"

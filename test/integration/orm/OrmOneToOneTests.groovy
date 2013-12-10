@@ -24,7 +24,14 @@ import orm.Person
  */
 class OrmOneToOneTests extends GroovyTestCase
 {
-	void testIndividual()
+	void testAll()
+	{
+		testIndividual()
+		testReplaceSave()
+		testNullSave()
+		testCascadeSave()
+	}
+	private testIndividual()
 	{
 		def c1 = new Car(uuid: "0001", make: "Honda", model: "Accord", color: "Gray", year: 2006)
 		c1.save()
@@ -44,7 +51,7 @@ class OrmOneToOneTests extends GroovyTestCase
 		assertEquals p.emailAddress, p1a.emailAddress
 	}
 
-	void testReplaceSave()
+	private testReplaceSave()
 	{
 		def p = Person.get("bob@florian.org")
 		def c3 = new Car(uuid: "0003", make: "Ford", model: "Explorer", color: "Black", year: 2011)
@@ -60,7 +67,7 @@ class OrmOneToOneTests extends GroovyTestCase
 		assertEquals c3.uuid, p1.secondCar.uuid
 	}
 
-	void testNullSave()
+	private testNullSave()
 	{
 		def p = Person.get("bob@florian.org")
 		p.firstName = "Robert"
@@ -72,7 +79,7 @@ class OrmOneToOneTests extends GroovyTestCase
 		assertNull p1.secondCar
 	}
 
-	void testCascadeSave()
+	private testCascadeSave()
 	{
 		def p = new Person(
 				emailAddress: "vicky@florian.org",

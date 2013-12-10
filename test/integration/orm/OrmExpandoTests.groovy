@@ -10,7 +10,19 @@ class OrmExpandoTests extends GroovyTestCase
 {
 	static GUID = UUID.randomUUID()
 
-	void testConstructor()
+	void testAll()
+	{
+		testConstructor()
+		testSetter()
+		testGet1()
+		testGet2()
+		testInsertNonNull()
+		testInsertNull()
+		testSaveNull()
+		testMappedObjectIds()
+	}
+
+	private testConstructor()
 	{
 		def car = new Car(
 				uuid:  "${GUID}-1",
@@ -28,7 +40,7 @@ class OrmExpandoTests extends GroovyTestCase
 		car.save()
 	}
 
-	void testSetter()
+	private testSetter()
 	{
 		def car = new Car(
 				uuid:  "${GUID}-2",
@@ -48,7 +60,7 @@ class OrmExpandoTests extends GroovyTestCase
 
 	}
 
-	void testGet1()
+	private testGet1()
 	{
 		def car = Car.get("${GUID}-1")
 		assertEquals "Ford", car.make
@@ -56,7 +68,7 @@ class OrmExpandoTests extends GroovyTestCase
 		assertEquals "XLT", car.trimLevel
 	}
 
-	void testGet2()
+	private testGet2()
 	{
 		def car = Car.get("${GUID}-2")
 		assertEquals "Honda", car.make
@@ -64,7 +76,7 @@ class OrmExpandoTests extends GroovyTestCase
 		assertEquals "EX-V6", car.trimLevel
 	}
 
-	void testInsertNonNull()
+	private testInsertNonNull()
 	{
 		def car = Car.get("${GUID}-2")
 		car.insert(trimLevel: "EX")
@@ -72,7 +84,7 @@ class OrmExpandoTests extends GroovyTestCase
 		assertEquals "EX", Car.get("${GUID}-2").trimLevel
 	}
 
-	void testInsertNull()
+	private testInsertNull()
 	{
 		def car = Car.get("${GUID}-2")
 		car.insert(trimLevel: null)
@@ -81,7 +93,7 @@ class OrmExpandoTests extends GroovyTestCase
 	}
 
 
-	void testSaveNull()
+	private testSaveNull()
 	{
 		def car = Car.get("${GUID}-2")
 		assertEquals "FWD", car.drivetrain
@@ -92,7 +104,7 @@ class OrmExpandoTests extends GroovyTestCase
 		assertNull Car.get("${GUID}-2").drivetrain
 	}
 
-	void testMappedObjectIds()
+	private testMappedObjectIds()
 	{
 		def uuid = "${GUID}-3"
 		def c1 = new Car(

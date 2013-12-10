@@ -13,22 +13,28 @@ class ExpandosTests extends ExamplesBase
 	static imports = ["import docs.expandos.*"]
 
 	@Test
-	void testSave()
+	void testAll()
+	{
+		testSave()
+		testGetProperty()
+		testSetupRemainder()
+		testFindAllByAccountIdAndEventTypeAndSource()
+	}
+
+	private testSave()
 	{
 		def result = processFile(document, imports, "new Event(accountId:")
 		assertEquals 1, result.size()
 		assertTrue result[0] instanceof Event
 	}
 
-	@Test
-	void testGetProperty()
+	private testGetProperty()
 	{
 		def result = processFile(document, imports, "Event.list().each { println it.destination }")
 		assertEquals 1, result.size()
 	}
 
-	@Test
-	void testSetupRemainder()
+	private testSetupRemainder()
 	{
 		new Event(accountId: "A001", eventType: "PhoneCall", source: "+13015551212", destination: "+14085551212").save()
 		new Event(accountId: "A001", eventType: "PhoneCall", source: "+14105551212", destination: "+14155551212").save()
@@ -43,8 +49,7 @@ class ExpandosTests extends ExamplesBase
 		new Event(accountId: "A002", eventType: "EmailMsg", source: "jdoe@any.com", destination: "me@otherplace.com").save()
 	}
 
-	@Test
-	void testFindAllByAccountIdAndEventTypeAndSource()
+	private testFindAllByAccountIdAndEventTypeAndSource()
 	{
 		def result = processFile(document, imports, "Event.findAllByAccountIdAndEventTypeAndSource")
 		assertEquals 1, result.size()
