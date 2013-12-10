@@ -34,7 +34,9 @@ class ConsoleController
 			def imports = columnFamilies.collect{"import ${it.value}.*;"}.join("\n")
 			result.output = consoleService.executeScript(imports + "\n" + script)
 			if (ks && columnFamily) {
-				result.columnFamily = consoleService.showColumnFamily(ks, columnFamily)
+				result.columnFamily = session.displayType == "data" ?
+					consoleService.showColumnFamily(ks, columnFamily)  :
+					source(className)
 			}
 			scripts.add(script)
 		}
@@ -47,6 +49,7 @@ class ConsoleController
 
 	def showColumnFamily()
 	{
+		session.displayType = "data"
 		def columnFamily = params.columnFamily
 		def className = columnFamily.split("_")[0]
 		def result = [
@@ -58,6 +61,7 @@ class ConsoleController
 
 	def showSource()
 	{
+		session.displayType = "source"
 		def name = params.name
 		def result = [source: source(name), name: "${name}"]
 		render result as JSON
