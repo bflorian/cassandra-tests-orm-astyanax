@@ -59,7 +59,7 @@ class ConsoleService
 
 	private rowKey(row, cf) {
 		def vc = cf.keyValidationClass
-		if (vc.endsWith("UUIDType")) {
+		if (dataType(ct) == "UUID") {
 			UUID.fromBytes(row.rawKey.array()).toString()
 		}
 		else {
@@ -68,7 +68,7 @@ class ConsoleService
 	}
 	private columnName(col, cf) {
 		def ct = cf.comparatorType
-		if (ct.endsWith("UUIDType)")) {
+		if (dataType(ct) == "UUID") {
 			UUID.fromBytes(col.rawName.array()).toString()
 		}
 		else {
@@ -81,16 +81,16 @@ class ConsoleService
 		def cd = cdl.find{it.name == col.name}
 		def vc = cd?.validationClass ?: cf.defaultValidationClass
 		if (vc) {
-			def type = vc.split("\\.")[-1]
+			def type = dataType(vc)
 			switch(type) {
-				case "UUIDType":
+				case "UUID":
 					return col.UUIDValue
-				case "LongType":
-				case "CounterColumnType":
+				case "Long":
+				case "CounterColumn":
 					return col.longValue
-				case "BooleanType":
+				case "Boolean":
 					return col.booleanValue
-				case "DateType":
+				case "Date":
 					return col.dateValue
 				default:
 					return col.stringValue
@@ -99,5 +99,10 @@ class ConsoleService
 		else {
 			return col.stringValue
 		}
+	}
+
+	private static dataType(String s) {
+		final pat = ~/.*\.([a-z,A-Z,0-9]+)Type\)?$/
+		pat.matcher(s).replaceAll('$1')
 	}
 }
