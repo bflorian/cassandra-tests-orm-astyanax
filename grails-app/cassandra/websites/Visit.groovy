@@ -17,7 +17,6 @@ class Visit
 
 	static cassandraMapping = [
 			primaryKey: 'uuid',
-
 			explicitIndexes: [
 					['visitorId'],
 					['refType']
@@ -26,7 +25,6 @@ class Visit
 			counters: [
 					[groupBy: ['occurTime','refType','refName']],
 			],
-
 			keySpace: "websites"
 	]
 }
