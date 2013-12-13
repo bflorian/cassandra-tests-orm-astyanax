@@ -44,7 +44,7 @@
 		{
 			var index = name.indexOf('_')
 			var base = index > 0 ? name.slice(0,index) : name;
-			console.log(base);
+			//console.log(base);
 			$('#column_family_name').html(name);
 			$('#ColumnFamilies li.dropdown').removeClass('active');
 			$('#' + base).addClass('active');
