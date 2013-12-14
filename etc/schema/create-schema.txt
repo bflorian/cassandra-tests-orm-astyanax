@@ -6,12 +6,12 @@ use example;
 create column family Person with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Person_IDX with comparator=UTF8Type and default_validation_class=UTF8Type;
 create column family Person_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
-create column family Post with comparator=UTF8Type and key_validation_class=UUIDType and default_validation_class=UTF8Type and column_metadata=[{column_name: uuid, validation_class: UUIDType}];
-create column family Post_IDX with comparator='UUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
+create column family Post with comparator=UTF8Type and key_validation_class=TimeUUIDType and default_validation_class=UTF8Type and column_metadata=[{column_name: uuid, validation_class: UUIDType}];
+create column family Post_IDX with comparator='TimeUUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
 create column family Post_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
-create column family Comment with comparator=UTF8Type and key_validation_class=UUIDType and default_validation_class=UTF8Type and column_metadata=[
-    {column_name: uuid, validation_class: UUIDType},
-    {column_name: postId, validation_class: UUIDType}
+create column family Comment with comparator=UTF8Type and key_validation_class=TimeUUIDType and default_validation_class=UTF8Type and column_metadata=[
+    {column_name: uuid, validation_class: TimeUUIDType},
+    {column_name: postId, validation_class: TimeUUIDType}
 ];
 create column family Comment_IDX with comparator='UUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
 create column family Comment_CTR with comparator=UTF8Type and default_validation_class=CounterColumnType;
@@ -157,8 +157,8 @@ create keyspace websites
     and placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy';
 
 use websites;
-create column family Visit with comparator=UTF8Type and key_validation_class=UUIDType and default_validation_class=UTF8Type and column_metadata=[
-   {column_name: uuid, validation_class: UUIDType},
+create column family Visit with comparator=UTF8Type and key_validation_class=TimeUUIDType and default_validation_class=UTF8Type and column_metadata=[
+   {column_name: uuid, validation_class: TimeUUIDType},
    {column_name: visitorId, validation_class: UTF8Type},
    {column_name: occurTime, validation_class: UTF8Type},
    {column_name: refType, validation_class: UTF8Type},
@@ -166,18 +166,18 @@ create column family Visit with comparator=UTF8Type and key_validation_class=UUI
    {column_name: bounced, validation_class: UTF8Type},
    {column_name: timeOnSite, validation_class: UTF8Type}
 ];
-create column family Visit_IDX with comparator='UUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
+create column family Visit_IDX with comparator='TimeUUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
 create column family Visit_CTR with comparator=UTF8Type and key_validation_class=UTF8Type and default_validation_class=CounterColumnType;
 
-create column family Action with comparator=UTF8Type and key_validation_class=UUIDType and default_validation_class=UTF8Type;
-create column family Action_IDX with comparator='UUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
+create column family Action with comparator=UTF8Type and key_validation_class=TimeUUIDType and default_validation_class=UTF8Type;
+create column family Action_IDX with comparator='TimeUUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
 create column family Action_CTR with comparator=UTF8Type and key_validation_class=UTF8Type and default_validation_class=CounterColumnType;
 
-create column family WebsiteVisit with comparator=UTF8Type and key_validation_class=UUIDType and default_validation_class=UTF8Type and column_metadata=[
-    {column_name: visitId, validation_class: UUIDType},
-    {column_name: visitorId, validation_class: UUIDType}
+create column family WebsiteVisit with comparator=UTF8Type and key_validation_class=TimeUUIDType and default_validation_class=UTF8Type and column_metadata=[
+    {column_name: visitId, validation_class: TimeUUIDType},
+    {column_name: visitorId, validation_class: TimeUUIDType}
 ];
-create column family WebsiteVisit_IDX with comparator='UUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
+create column family WebsiteVisit_IDX with comparator='TimeUUIDType(reversed=true)' and key_validation_class=UTF8Type and default_validation_class=UTF8Type;
 create column family WebsiteVisit_CTR with comparator=UTF8Type and key_validation_class=UTF8Type and default_validation_class=CounterColumnType;
 
 
