@@ -50,7 +50,7 @@ class ConsoleService
 			if (cols?.size() > 0) {
 				sb << "${rowKey(row, cf)} =>\n"
 				cols.each {col ->
-					sb << "    ${columnName(col, cf)} => '${columnValue(col, cf)}'\n"
+					sb << "    ${columnName(col, cf)} => ${columnValue(col, cf)}\n"
 				}
 			}
 		}
@@ -59,7 +59,7 @@ class ConsoleService
 
 	private rowKey(row, cf) {
 		def vc = cf.keyValidationClass
-		if (dataType(vc) == "UUID") {
+		if (dataType(vc) in ["UUID","TimeUUID"]) {
 			UUID.fromBytes(row.rawKey.array()).toString()
 		}
 		else {
@@ -68,7 +68,7 @@ class ConsoleService
 	}
 	private columnName(col, cf) {
 		def ct = cf.comparatorType
-		if (dataType(ct) == "UUID") {
+		if (dataType(ct) in ["UUID","TimeUUID"]) {
 			UUID.fromBytes(col.rawName.array()).toString()
 		}
 		else {
@@ -77,6 +77,7 @@ class ConsoleService
 	}
 
 	private columnValue(col, cf) {
+		def ct = cf.comparatorType
 		def cdl = cf.columnDefinitionList
 		def cd = cdl.find{it.name == col.name}
 		def vc = cd?.validationClass ?: cf.defaultValidationClass
@@ -84,6 +85,7 @@ class ConsoleService
 			def type = dataType(vc)
 			switch(type) {
 				case "UUID":
+				case "TimeUUID":
 					return col.UUIDValue
 				case "Long":
 				case "CounterColumn":
@@ -93,11 +95,11 @@ class ConsoleService
 				case "Date":
 					return col.dateValue
 				default:
-					return col.stringValue
+					return "'$col.stringValue'"
 			}
 		}
 		else {
-			return col.stringValue
+			return "'$col.stringValue'"
 		}
 	}
 

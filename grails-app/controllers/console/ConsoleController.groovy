@@ -11,9 +11,11 @@ class ConsoleController
 	def keyspace = "websites"
 	def columnFamilies =
 		[
-			Visit:"websites", Action:"websites", WebsiteVisit:"websites",
+			Visit:[keyspace:"websites", package: "websites"], Action:[keyspace:"websites", package: "websites"],
+			Event:[keyspace:"smartthings", package: "physicalgraph.event.cassandra"],
+			DeviceState:[keyspace:"smartthings", package: "physicalgraph.device.cassandra"]
 			//Person:"example", Post:"example", Comment:"example"
-			Like:"misc"
+			//Like:"misc"
 	]
 
 	def index()
@@ -26,12 +28,12 @@ class ConsoleController
 		def script = params.script
 		def columnFamily = params.columnFamily
 		def className = columnFamily.split("_")[0]
-		def ks = columnFamilies[className]
+		def ks = columnFamilies[className].keyspace
 
 		def result = [columnFamilyName: columnFamily]
 
 		try {
-			def imports = columnFamilies.collect{"import ${it.value}.*;"}.join("\n")
+			def imports = columnFamilies.collect{"import ${it.value.package}.*;"}.join("\n")
 			result.output = consoleService.executeScript(imports + "\n" + script)
 			if (ks && columnFamily) {
 				result.columnFamily = session.displayType == "data" ?
@@ -54,7 +56,7 @@ class ConsoleController
 		def className = columnFamily.split("_")[0]
 		def result = [
 				columnFamilyName: columnFamily,
-				columnFamily: consoleService.showColumnFamily(columnFamilies[className],columnFamily)
+				columnFamily: consoleService.showColumnFamily(columnFamilies[className].keyspace,columnFamily)
 		]
 		render result as JSON
 	}
@@ -86,7 +88,8 @@ class ConsoleController
 
 	private source(name)
 	{
-		def file = new File("grails-app/cassandra/${columnFamilies[name]}/${name}.groovy")
+		def path = columnFamilies[name].package.replaceAll("\\.","/")
+		def file = new File("grails-app/cassandra/${path}/${name}.groovy")
 		return file.text
 	}
 
