@@ -73,6 +73,7 @@ environments {
 }
 
 // log4j configuration
+
 log4j = {
     // Example of changing the log pattern for the default console
     // appender:
@@ -80,19 +81,30 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
-	debug 'com.netflix.astyanax.connectionpool.impl.Slf4jConnectionPoolMonitorImpl'
+	//debug 'com.netflix.astyanax.connectionpool.impl.Slf4jConnectionPoolMonitorImpl',
+	//		'com.reachlocal.grails.plugins.cassandra.astyanax.AstyanaxPersistenceMethods',
+	//		'com.reachlocal.grails.plugins.cassandra.astyanax.AstyanaxService'
+	//        'grails.app.services'
+	debug 'physicalgraph',
+		'reachlocal',
+		'grails.app.conf',
+		'grails.app.filters',
+		'grails.app.services',
+		'grails.app.controllers',
+		'grails.app.domain',
+		'com.netflix.astyanax.connectionpool.impl.Slf4jConnectionPoolMonitorImpl'
 
-    info  'org.codehaus.groovy.grails.web.servlet',  //  controllers
-           'org.codehaus.groovy.grails.web.pages', //  GSP
-           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping', // URL mapping
-           'org.codehaus.groovy.grails.commons', // core / classloading
-           'org.codehaus.groovy.grails.plugins', // plugins
-           'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+	error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+		'org.codehaus.groovy.grails.web.pages',          // GSP
+		'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+		'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+		'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+		'org.codehaus.groovy.grails.commons',            // core / classloading
+		'org.codehaus.groovy.grails.plugins',            // plugins
+		'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+		'org.springframework',
+		'org.hibernate',
+		'net.sf.ehcache.hibernate'
 }
 
 cassandra {
