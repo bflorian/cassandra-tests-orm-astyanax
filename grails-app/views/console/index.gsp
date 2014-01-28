@@ -161,6 +161,7 @@
 				<ul class="dropdown-menu">
 					<li><a href="#" onclick="showColumnFamily(this);">${cf.key}</a></li>
 					<li><a href="#" onclick="showColumnFamily(this);">${cf.key}_IDX</a></li>
+					<li><a href="#" onclick="showColumnFamily(this);">${cf.key}_LNK</a></li>
 					<li><a href="#" onclick="showColumnFamily(this);">${cf.key}_CTR</a></li>
 					<li><a href="#" onclick="showSource('${cf.key}');">${cf.key} Class</a></li>
 				</ul>
