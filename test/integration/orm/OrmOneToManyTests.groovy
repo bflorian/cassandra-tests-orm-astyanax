@@ -101,9 +101,7 @@ class OrmOneToManyTests extends GroovyTestCase
 			students[2].delete()
 
 			def h2 = Household.get("orm_one_to_many1@localhost.com")
-			// TODO - UUID - revert when separate column family for back links is implemented
-			//assertEquals 2, h2.students.size()
-			assertEquals 3, h2.students.size()
+			assertEquals 2, h2.students.size()
 		}
 	}
 }
