@@ -46,7 +46,7 @@
     <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="grails-2.2.2" level="application" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="Grails User Library (cassandraAstyanax-inplacePlugin)">
         <CLASSES>
           <root url="file://$MODULE_DIR$/../cassandra-astyanax/lib" />
