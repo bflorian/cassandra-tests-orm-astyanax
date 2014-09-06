@@ -12,13 +12,13 @@ class ConsoleController
 	def columnFamilies =
 		[
 			//Visit:[keyspace:"websites", package: "websites"], Action:[keyspace:"websites", package: "websites"],
-			//Event:[keyspace:"smartthings", package: "physicalgraph.event.cassandra"],
-			//DeviceState:[keyspace:"smartthings", package: "physicalgraph.device.cassandra"]
+			Event:[keyspace:"smartthings", package: "physicalgraph.event.cassandra"],
+			DeviceState:[keyspace:"smartthings", package: "physicalgraph.device.cassandra"]
 			//Person:"example", Post:"example", Comment:"example"
 			//Like:"misc"
-			Visit:[keyspace:"docs_counters", package: "docs.counters"],
-			Household:[keyspace:"orm_test", package: "orm"],
-			Student:[keyspace:"orm_test", package: "orm"]
+			//Visit:[keyspace:"docs_counters", package: "docs.counters"],
+			//Household:[keyspace:"orm_test", package: "orm"],
+			//Student:[keyspace:"orm_test", package: "orm"]
 		]
 
 	def index()

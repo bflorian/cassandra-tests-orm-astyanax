@@ -12,11 +12,13 @@ class DeviceState {
 	String unit
 	Date date
 	String type
+	List recipientIds
 
 	static cassandraMapping = [
 		unindexedPrimaryKey: 'uuid',
 		explicitIndexes : [
-			['deviceId','name']
+			['deviceId','name'],
+			['recipientIds']
 			// TODO - additional indexes?
 			//,['deviceId','name','value'],
 		],
