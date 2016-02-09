@@ -8,11 +8,8 @@ import grails.converters.JSON
 class ConsoleController 
 {
 	def consoleService
-	def keyspace = "websites"
 	def columnFamilies =
 		[
-			//Visit:[keyspace:"websites", package: "websites"], Action:[keyspace:"websites", package: "websites"],
-
 			//Event:[keyspace:"smartthings", package: "physicalgraph.event.cassandra"],
 			//DeviceState:[keyspace:"smartthings", package: "physicalgraph.device.cassandra"]
 

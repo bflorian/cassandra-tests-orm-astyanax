@@ -15,8 +15,8 @@ class BootStrap
     }
 
 	static private runCliScript(script) {
-		def dsePath = System.getProperty('dsePath')
-		def cassandraCli = "$dsePath/bin/cassandra-cli -h localhost -f"
+		def dsePath = System.getProperty('dsePath') ?: '/usr/local'
+		def cassandraCli = "$dsePath/bin/cassandra-cli -h 192.168.111.221 -f"
 
 		def cmd = "$cassandraCli $script"
 		def p = cmd.execute()
@@ -31,7 +31,7 @@ class BootStrap
 
 	static private runCqlScript(script) {
 		def dsePath = System.getProperty('dsePath')
-		def cassandraCli = "$dsePath/bin/cqlsh -f"
+		def cassandraCli = "$dsePath/bin/cqlsh 192.168.111.221 -f"
 
 		def cmd = "$cassandraCli $script"
 		def p = cmd.execute()

@@ -13,7 +13,11 @@ import java.text.SimpleDateFormat
  */
 class OrmClusterTests 
 {
-	@Test
+
+	void testAll() {
+
+	}
+
 	void testSave()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -28,7 +32,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testAddToHasOne()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -40,7 +44,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testAddToHasMany()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -58,7 +62,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testFindWhere()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -68,7 +72,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testFindAllWhere()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -77,7 +81,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testFindBy()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -86,7 +90,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testFindAllBy()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -95,7 +99,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testCountBy()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -104,7 +108,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testGetCounts()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -115,7 +119,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testGetCountTotal()
 	{
 		if (System.getProperty("cluster2.host")) {
@@ -124,7 +128,7 @@ class OrmClusterTests
 		}
 	}
 
-	@Test
+
 	void testGetCountsGroupBy()
 	{
 		if (System.getProperty("cluster2.host")) {

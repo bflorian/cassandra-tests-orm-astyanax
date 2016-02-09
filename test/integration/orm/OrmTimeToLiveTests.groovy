@@ -13,7 +13,17 @@ class OrmTimeToLiveTests extends GroovyTestCase
 
 	def astyanaxService
 
-	void testTtlFieldExpiration()
+	void testAll() {
+		item_TtlFieldExpiration()
+		item_TtlFieldExpirationInsert()
+		item_TtlObjectExpiration()
+		item_TtlFieldParameter()
+		item_TtlObjectParameter()
+		item_TtlInsertParameter()
+		item_TtlInsertParameterMap()
+	}
+
+	void item_TtlFieldExpiration()
 	{
 		new Car(
 				uuid:  "${GUID}-1",
@@ -34,13 +44,13 @@ class OrmTimeToLiveTests extends GroovyTestCase
 		assertNull car.price
 	}
 
-	void testTtlFieldExpirationInsert()
+	void item_TtlFieldExpirationInsert()
 	{
 		def car = Car.get("${GUID}-1")
 		assertEquals "Ford", car.make
 		assertNull car.price
 
-		car.insert(price: 38000, 5)
+		car.insert([price: 38000], [ttl:5])
 
 		car = Car.get("${GUID}-1")
 		assertEquals "Ford", car.make
@@ -52,7 +62,7 @@ class OrmTimeToLiveTests extends GroovyTestCase
 		assertNull car.price
 	}
 
-	void testTtlObjectExpiration()
+	void item_TtlObjectExpiration()
 	{
 		def uuid = UUID.randomUUID()
 		new LogEntry(uuid: uuid, message: "Log message text").save()
@@ -67,7 +77,7 @@ class OrmTimeToLiveTests extends GroovyTestCase
 		astyanaxService.showColumnFamilies(["LogEntry", "LogEntry_IDX"], "orm_test")
 	}
 
-	void testTtlFieldParameter()
+	void item_TtlFieldParameter()
 	{
 		new Person(
 				emailAddress:  "ttl@person.com" ,
@@ -85,7 +95,7 @@ class OrmTimeToLiveTests extends GroovyTestCase
 		assertNull p.lastName
 	}
 
-	void testTtlObjectParameter()
+	void item_TtlObjectParameter()
 	{
 		new Person(
 				emailAddress:  "ttl2@person.com" ,
@@ -102,10 +112,10 @@ class OrmTimeToLiveTests extends GroovyTestCase
 		assertNull p
 	}
 
-	void testTtlInsertParameter()
+	void item_TtlInsertParameter()
 	{
 		def p = Person.get("ttl@person.com")
-		p.insert(firstName:  "TestTTL", 5)
+		p.insert([firstName:  "TestTTL"], [ttl:5])
 
 		p = Person.get("ttl@person.com")
 		assertEquals "TestTTL", p.firstName
@@ -115,10 +125,10 @@ class OrmTimeToLiveTests extends GroovyTestCase
 		assertNull p.firstName
 	}
 
-	void testTtlInsertParameterMap()
+	void item_TtlInsertParameterMap()
 	{
 		def p = Person.get("ttl@person.com")
-		p.insert(firstName:  "TestTTL2", lastName:  "UserTTL2", [firstName:  6, lastName:  3])
+		p.insert([firstName:  "TestTTL2", lastName:  "UserTTL2"], [ttl: [firstName:  6, lastName:  3]])
 
 		p = Person.get("ttl@person.com")
 		assertEquals "TestTTL2", p.firstName

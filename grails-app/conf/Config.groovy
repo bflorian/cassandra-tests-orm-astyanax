@@ -114,11 +114,15 @@ cassandra {
 astyanax {
 	clusters {
 		standard {
-			seeds = "localhost:9160"
+			seeds = ["192.168.111.221:9160"]
+			defaultReadConsistencyLevel = ConsistencyLevel.CL_QUORUM
+			defaultWriteConsistencyLevel = ConsistencyLevel.CL_QUORUM
 		}
 		gettingstarted {
-			seeds = "localhost:9160"
+			seeds = ["192.168.111.221:9160"]
 			defaultKeyspace = "docs_gettingstarted"
+			defaultReadConsistencyLevel = ConsistencyLevel.CL_QUORUM
+			defaultWriteConsistencyLevel = ConsistencyLevel.CL_QUORUM
 		}
 	}
 	defaultCluster = 'standard'

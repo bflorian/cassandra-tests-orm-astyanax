@@ -11,8 +11,7 @@ class SecondaryIndexesTests  extends ExamplesBase
 	static document = "../cassandra-orm/src/docs/guide/2.2 Secondary Indexes.gdoc"
 	static imports = ["import docs.secondaryindexes.*"]
 
-	@Test
-	void testSetup()
+	void setupData()
 	{
 		new Person(username: "sally", state: "Maryland", country: "USA", gender: "Female").save()
 		new Person(username: "sue", state: "New York", country: "USA", gender: "Female").save()
@@ -22,10 +21,9 @@ class SecondaryIndexesTests  extends ExamplesBase
 		new Person(username: "pete", state: "Maine", country: "USA", gender: "Male").save()
 	}
 
-	@Test
 	void testGormQueries()
 	{
+		setupData()
 		def result = processFile(document, imports, "Person.findAllByGender")
 	}
-
 }

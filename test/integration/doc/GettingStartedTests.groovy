@@ -12,7 +12,6 @@ class GettingStartedTests extends ExamplesBase
 	static document = "../cassandra-orm/src/docs/guide/1.1 Getting Started.gdoc"
 	static imports = ["import docs.gettingstarted.*"]
 
-	@Test
 	void testAll() {
 		testNewPerson()
 		testGetPerson()

@@ -6,8 +6,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/target/plugins/twitter-bootstrap-2.1.1/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/plugins/jquery-1.7.1/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/twitter-bootstrap-2.1.1/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/jquery-1.7.1/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -21,51 +19,49 @@
         <naming-strategy-map />
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/jquery-1.7.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/jquery-1.7.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/jquery-1.7.1/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/jquery-1.7.1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/jquery-1.7.1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/target/plugins/hibernate-2.2.2">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/hibernate-2.2.2/grails-app/i18n" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/resources-1.1.6">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/resources-1.1.6/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/target/plugins/jquery-1.7.1">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/jquery-1.7.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/jquery-1.7.1/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/jquery-1.7.1/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/jquery-1.7.1/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/twitter-bootstrap-2.1.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/twitter-bootstrap-2.1.1/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/twitter-bootstrap-2.1.1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/target/plugins/resources-1.1.6">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/resources-1.1.6/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.4/projects/cassandra-console/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/target/plugins/tomcat-2.2.2" />
+    <content url="file://$MODULE_DIR$/target/plugins/twitter-bootstrap-2.1.1">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/twitter-bootstrap-2.1.1/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/twitter-bootstrap-2.1.1/grails-app/taglib" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
+    <content url="file://$MODULE_DIR$/target/plugins/webxml-1.4.1">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="grails-2.2.2" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.2.2" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (cassandra-tests-orm-astyanax-grailsPlugins)">
         <CLASSES>
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.stephenc.eaio-uuid/uuid/jars/uuid-3.2.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.code.findbugs/jsr305/jars/jsr305-1.3.9.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.guava/guava/jars/guava-11.0.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-csv/bundles/org.apache.servicemix.bundles.commons-csv-1.0-r706900_3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.stephenc.high-scale-lib/high-scale-lib/jars/high-scale-lib-1.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/joda-time/joda-time/jars/joda-time-2.0.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/stax/stax-api/jars/stax-api-1.0.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.jettison/jettison/bundles/jettison-1.3.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.stephenc/jamm/jars/jamm-0.2.5.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.cassandra/cassandra-thrift/jars/cassandra-thrift-1.0.8.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.servlet/servlet-api/jars/servlet-api-2.5.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.thrift/libthrift/jars/libthrift-0.6.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.yaml/snakeyaml/jars/snakeyaml-1.6.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/jline/jline/jars/jline-0.9.94.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.mortbay.jetty/servlet-api/jars/servlet-api-2.5-20081211.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.mortbay.jetty/jetty-util/jars/jetty-util-6.1.22.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.mortbay.jetty/jetty/jars/jetty-6.1.22.jar!/" />
@@ -73,67 +69,40 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.antlr/stringtemplate/jars/stringtemplate-3.2.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.antlr/antlr-runtime/jars/antlr-runtime-3.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.antlr/antlr/jars/antlr-3.2.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-cli/commons-cli/jars/commons-cli-1.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.ning/compress-lzf/bundles/compress-lzf-0.8.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.xerial.snappy/snappy-java/bundles/snappy-java-1.0.4.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.cassandra/cassandra-all/jars/cassandra-all-1.0.8.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.netflix.astyanax/astyanax/jars/astyanax-1.0.3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.jackson/jackson-mapper-asl/jars/jackson-mapper-asl-1.9.7.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.jackson/jackson-core-asl/jars/jackson-core-asl-1.9.7.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-simple/jars/grails-datastore-simple-1.0.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-core/jars/grails-datastore-core-1.0.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm/jars/grails-datastore-gorm-1.0.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-web/jars/spring-web-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-tx/jars/spring-tx-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-orm/jars/spring-orm-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-jms/jars/spring-jms-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-jdbc/jars/spring-jdbc-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-expression/jars/spring-expression-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-context-support/jars/spring-context-support-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-context/jars/spring-context-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-beans/jars/spring-beans-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-asm/jars/spring-asm-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-aspects/jars/spring-aspects-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-aop/jars/spring-aop-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-core/jars/spring-core-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-validation/jars/grails-plugin-validation-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-url-mappings/jars/grails-plugin-url-mappings-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-mimetypes/jars/grails-plugin-mimetypes-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-servlets/jars/grails-plugin-servlets-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-services/jars/grails-plugin-services-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-scaffolding/jars/grails-plugin-scaffolding-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-log4j/jars/grails-plugin-log4j-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-i18n/jars/grails-plugin-i18n-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-gsp/jars/grails-plugin-gsp-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-filters/jars/grails-plugin-filters-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-datasource/jars/grails-plugin-datasource-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-converters/jars/grails-plugin-converters-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-domain-class/jars/grails-plugin-domain-class-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-controllers/jars/grails-plugin-controllers-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-codecs/jars/grails-plugin-codecs-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-logging/jars/grails-logging-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-web/jars/grails-web-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-spring/jars/grails-spring-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-resources/jars/grails-resources-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-hibernate/jars/grails-hibernate-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-crud/jars/grails-crud-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-core/jars/grails-core-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-bootstrap/jars/grails-bootstrap-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy/groovy-all/jars/groovy-all-1.8.6.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/javassist/javassist/jars/javassist-3.12.0.GA.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-test/jars/spring-test-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-test/jars/grails-test-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-testing/jars/grails-plugin-testing-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-plugin-tomcat/jars/grails-plugin-tomcat-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-scripts/jars/grails-scripts-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-docs/jars/grails-docs-2.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.tmatesoft.svnkit/svnkit/jars/svnkit-1.3.5.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.protobuf/protobuf-java/jars/protobuf-java-2.3.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.25.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.25.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.25.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/io.netty/netty/bundles/netty-3.6.6.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.cassandra/cassandra-thrift/jars/cassandra-thrift-1.2.11.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.thrift/libthrift/jars/libthrift-0.7.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.yammer.metrics/metrics-core/jars/metrics-core-2.2.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.mindrot/jbcrypt/jars/jbcrypt-0.3m.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/edu.stanford.ppl/snaptree/jars/snaptree-0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.jpountz.lz4/lz4/jars/lz4-1.1.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.xerial.snappy/snappy-java/bundles/snappy-java-1.0.5.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.cassandra/cassandra-all/jars/cassandra-all-1.2.11.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.jboss.netty/netty/bundles/netty-3.2.4.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.netflix.astyanax/astyanax-cassandra/jars/astyanax-cassandra-1.56.44.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.netflix.astyanax/astyanax-thrift/jars/astyanax-thrift-1.56.44.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.jettison/jettison/bundles/jettison-1.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.stephenc.high-scale-lib/high-scale-lib/jars/high-scale-lib-1.1.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.guava/guava/bundles/guava-14.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/joda-time/joda-time/jars/joda-time-1.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.eaio.uuid/uuid/jars/uuid-3.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.netflix.astyanax/astyanax-core/jars/astyanax-core-1.56.44.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/resources/zips/resources-1.1.6.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.7.1.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.2.2.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/twitter-bootstrap/zips/twitter-bootstrap-2.1.1.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit-dep/jars/junit-dep-4.10.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-core/jars/spock-core-0.7-groovy-2.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.7-groovy-2.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.2.2.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/webxml/zips/webxml-1.4.1.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
